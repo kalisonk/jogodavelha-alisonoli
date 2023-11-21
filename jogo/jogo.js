@@ -1,4 +1,4 @@
-const celulas = document.querySelectorAll(.celula);
+const celulas = document.querySelectorAll(".celula");
 
 let checarTurno = true;
 
@@ -11,12 +11,13 @@ let jogoAcabou = false;
 
 document.addEventListener("click", (event) => {
     if (event.target.matches(".celula") && !jogoAcabou) {
-
+        
         jogar(event.target.id);
     }
-});
+})
 
 function jogar(id) {
+
     const celula = document.getElementById(id);
 
     if (celula.textContent === "") {
@@ -32,7 +33,5 @@ function jogar(id) {
         celula.removeEventListener("click", jogar);
 
         verificarVencedor(turno);
-    
     }
 }
-
